@@ -6,8 +6,22 @@ StockTradingMode是个开源的股票交易模式训练软件，使用java开发
 
 很多散户投资者在股票市场厮杀多年，被市场打的伤痕累累，实际上他们的交易并没有模式化，这是非常可惜的一件事情，为了提高新的交易者的基础知识水平的积累，按照一套行之有效的系统进行训练，让交易者把注意力放在模式选择和模式训练，模式研究上，这是一件非常有价值的事情。
 
+##功能列表如下：
+1、交易模式介绍
+2、股市新手必看
+3、交易基础学习
+4、交易软件使用
+5、交易模式训练
+6、交易模式交流
+
+
+##软件界面
 ![](https://github.com/semaomao/StockTradingMode/raw/master/html/img/screen1.png)
+
 ![](https://github.com/semaomao/StockTradingMode/raw/master/html/img/screen2.png)
+
 ![](https://github.com/semaomao/StockTradingMode/raw/master/html/img/screen3.png)
+
 ![](https://github.com/semaomao/StockTradingMode/raw/master/html/img/screen4.png)
+
 ![](https://github.com/semaomao/StockTradingMode/raw/master/html/img/screen5.png)
