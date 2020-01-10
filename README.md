@@ -25,3 +25,11 @@ StockTradingMode是个开源的股票交易模式训练软件，使用java开发
 ![](https://github.com/semaomao/StockTradingMode/raw/master/html/img/screen4.png)
 
 ![](https://github.com/semaomao/StockTradingMode/raw/master/html/img/screen5.png)
+
+# 联系方式
+
+作者:波哥 <br/>
+QQ:101143933 <br/>
+Email: song2c@163.com <br/>
+
+如果你是一个交易模式研究者和软件开发者可以跟我交流！
