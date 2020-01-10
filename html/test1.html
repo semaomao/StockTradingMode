@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://www.cnblogs.com/taoweiji/archive/2013/02/07/2908781.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin">
+    <meta property="og:description" content="public class JEditorPane extends JTextComponent可编辑各种内容的文本组件。有关基础知识信息和使用编辑器窗格的示例，请参阅 The Java Tutoria">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>java可以显示HTML的组件JEditorPane 说明（转） - ImWiki - 博客园</title>
+    
+    <link rel="stylesheet" href="./test1_files/blog-common.min.css">
+    <link id="MainCss" rel="stylesheet" href="./test1_files/bundle-codinglife.min.css">
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./test1_files/bundle-codinglife-mobile.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/taoweiji/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/taoweiji/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/taoweiji/wlwmanifest.xml">
+    <script src="./test1_files/amp4ads-host-v0.js.下载"></script><script src="./test1_files/pubads_impl_rendering_2019121002.js.下载"></script><script async="" src="./test1_files/analytics.js.下载"></script><script src="./test1_files/jquery-2.2.0.min.js.下载"></script>
+    <script src="./test1_files/blog-common.min.js.下载"></script>
+    <script>
+        var currentBlogId = 114604;
+        var currentBlogApp = 'taoweiji';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+    </script>
+    
+    
+    
+<link rel="preload" href="./test1_files/f.txt" as="script"><script type="text/javascript" src="./test1_files/f.txt"></script><script src="./test1_files/pubads_impl_2019121002.js.下载" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-37/html/container.html"></head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <!--
+<a href="https://github.com/taoweiji2008" target="_blank"><img style="position: fixed; top: 0; right: 0; border: 0;z-index:10" src="https://images0.cnblogs.com/blog2015/294743/201503/241715567241255.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+ -->
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/taoweiji/"><img id="blogLogo" src="img/log.jpg" alt="返回主页"></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/taoweiji/">陶伟基的博客</a>
+</h1>
+<h2>
+https://github.com/taoweiji
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/taoweiji/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/ImWiki">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/taoweiji/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+83&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+103</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/taoweiji/archive/2013/02/07/2908781.html">java可以显示HTML的组件JEditorPane 说明（转）</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <pre>public class <strong>JEditorPane </strong>extends <a title="javax.swing.text 中的类" href="http://www.cnblogs.com/taoweiji/admin/">JTextComponent</a></pre>
+<pre></pre>
+<p>可编辑各种内容的文本组件。有关基础知识信息和使用编辑器窗格的示例，请参阅 <em>The Java Tutorial</em> 中的 <a href="http://java.sun.com/docs/books/tutorial/uiswing/components/text.html">Using Text Components</a> 一节。</p>
+<p>此组件使用 <code>EditorKit</code> 的实现来完成其操作。对于给予它的各种内容，它能有效地将其形态变换为适当的文本编辑器种类。该编辑器在任意给定时间的内容类型都由当前已安装的 <code>EditorKit</code> 确定。如果将内容设置为新的 URL，则使用其类型来确定加载该内容所应使用的 <code>EditorKit</code>。</p>
+<p>默认情况下，已知下列内容类型：</p>
+<dl><dt><strong>text/plain</strong></dt><dd>纯文本，即无法识别给定的类型时所使用的默认值。在此情况下使用的工具包是 <code>DefaultEditorKit</code> 的扩展，可生成有换行的纯文本视图。</dd><dt><strong>text/html</strong></dt><dd>HTML 文本。在此情况下使用的工具包是类 <code>javax.swing.text.html.HTMLEditorKit</code>，支持 HTML 3.2。</dd><dt><strong>text/rtf</strong></dt><dd>RTF 文本。在此情况下使用的工具包是类 <code>javax.swing.text.rtf.RTFEditorKit</code>，它提供了对多样化文本格式 (Rich Text Format) 的有限支持。</dd></dl>
+<p>有多种方式可将内容加载到此组件中。</p>
+<ol>
+<li>可使用 <a href="http://www.cnblogs.com/taoweiji/admin/"><code>setText</code></a> 方法来初始化字符串组件。在这种情况下，将使用当前的 <code>EditorKit</code>，且此类型为期望的内容类型。</li>
+<li>可使用 <a href="http://www.cnblogs.com/taoweiji/admin/"><code>read</code></a> 方法来初始化 <code>Reader</code> 组件。注意，如果内容类型为 HTML，那么只有使用了 &lt;base&gt; 标记，或者设置了 <code>HTMLDocument</code> 上的 <em>Base</em> 属性时才能解析相关的引用（例如对于类似图像等内容）。在这种情况下，将使用当前的 <code>EditorKit</code>，且此类型为期望的内容类型。</li>
+<li>可使用 <a href="http://www.cnblogs.com/taoweiji/admin/"><code>setPage</code></a> 方法来初始化 URL 组件。在这种情况下，将根据该 URL 来确定内容类型，并且设置为该内容类型所注册的 <code>EditorKit</code>。</li>
+</ol>
+<p>某些内容类型可能通过生成超链接事件来提供对超链接的支持。如果 <code>JEditorPane</code> 是<em>不可编辑的</em>（已调用了 <code>JEditorPane.setEditable(false);</code>），则 HTML <code>EditorKit</code> 将生成超链接事件。如果文档中嵌入了 HTML frame，则典型的响应是更改当前文档的某一部分。以下代码片段是一种可能的超链接侦听器实现，它特殊对待 HTML frame 事件，并且简单地显示其他所有已激活的超链接。<code></code></p>
+<pre><code class="hljs haskell"><span class="hljs-class">     <span class="hljs-keyword">class</span> <span class="hljs-type">Hyperactive</span> implements <span class="hljs-type">HyperlinkListener</span> {
+ 
+         public void hyperlinkUpdate(<span class="hljs-type">HyperlinkEvent</span> <span class="hljs-title">e</span>) {
+             if (<span class="hljs-title">e</span>.<span class="hljs-title">getEventType</span>() == <span class="hljs-type">HyperlinkEvent</span>.<span class="hljs-type">EventType</span>.<span class="hljs-type">ACTIVATED</span>) {
+                 <span class="hljs-type">JEditorPane</span> pane = (<span class="hljs-type">JEditorPane</span>) e.getSource();
+                 if (<span class="hljs-title">e</span> <span class="hljs-title">instanceof</span> <span class="hljs-type">HTMLFrameHyperlinkEvent</span>) {
+                     <span class="hljs-type">HTMLFrameHyperlinkEvent</span>  evt = (<span class="hljs-type">HTMLFrameHyperlinkEvent</span>)e;
+                     <span class="hljs-type">HTMLDocument</span> doc = (<span class="hljs-type">HTMLDocument</span>)pane.getDocument();
+                     doc.processHTMLFrameHyperlinkEvent(<span class="hljs-title">evt</span>);
+                 } else {
+                     try {
+                         pane.setPage(<span class="hljs-title">e</span>.<span class="hljs-title">getURL</span>());
+                     } catch (<span class="hljs-type">Throwable</span> <span class="hljs-title">t</span>) {
+                         t.printStackTrace();
+                     }
+                 }
+             }
+         }
+     }
+
+ </span></code></pre>
+<p>有关自定义如何呈现 <strong>text/html</strong> 的信息，请参阅 <a href="http://www.cnblogs.com/taoweiji/admin/"><code>W3C_LENGTH_UNITS</code></a> 和 <a href="http://www.cnblogs.com/taoweiji/admin/"><code>HONOR_DISPLAY_PROPERTIES</code></a></p>
+<p>某些文档中与文化相关的信息是通过一种称为字符编码的机制来处理的。字符编码是字符集的成员（字母、象形文字、数字、符号或控制函数）和具体数字代码值的明确映射关系。它表示了文件的存储方式。字符编码有 ISO-8859-1、ISO-8859-5、Shift-jis、Euc-jp 和 UTF-8。将文件传递给用户代理 (<code>JEditorPane</code>) 时，该文件被转换为文档字符集 (ISO-10646 aka Unicode)。</p>
+<p>有多种方式可获得使用 <code>JEditorPane</code> 时所用的字符集映射关系。</p>
+<ol>
+<li>一种方式是将字符集指定为 MIME 类型的参数。通过调用 <a href="http://www.cnblogs.com/taoweiji/admin/">setContentType</a> 方法来建立此方式。如果通过 <a href="http://www.cnblogs.com/taoweiji/admin/">setPage</a> 方法加载内容，则其内容类型已根据 URL 的规范进行了设置。如果直接加载文件，则期望在加载前就已设置内容类型。</li>
+<li>指定字符集的另一种方式是在该文档内指定。这需要在确定所需的字符集之前读取该文档。要处理此情况，需要 <code>EditorKit</code>.read 操作抛出将要被捕获的 <code>ChangedCharSetException</code>。然后使用新的 Reader 重新开始该 read 操作，该 Reader 使用 <code>ChangedCharSetException</code>（这是一个 <code>IOException</code>）中所指定的字符集。</li>
+</ol>
+<p>&nbsp;</p>
+<dl><dt><strong><span style="font-size: xx-small;">换行</span></strong></dt><dd>有关如何处理换行的讨论，请参阅 <a href="http://www.cnblogs.com/taoweiji/admin/">DefaultEditorKit</a>。</dd></dl>
+<p><strong>警告：</strong> Swing 不是线程安全的。有关更多信息，请参阅 <a href="http://www.cnblogs.com/taoweiji/admin/">Swing's Threading Policy</a>。</p>
+<p><strong>警告：</strong>此类的序列化对象与以后的 Swing 版本不兼容。当前序列化支持适用于短期存储，或适用于在运行相同 Swing 版本的应用程序之间进行 RMI（Remote Method Invocation，远程方法调用）。从 1.4 版本开始，已在 <code>java.beans</code> 包中添加了支持所有 JavaBeans<sup><span>TM</span></sup> 长期存储的功能。请参见 <a title="java.beans 中的类" href="http://www.cnblogs.com/taoweiji/admin/"><code>XMLEncoder</code></a>。&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block"><div id="BlogPostCategory">
+    分类: 
+            <a href="https://www.cnblogs.com/taoweiji/category/436787.html" target="_blank">Java</a></div>
+
+
+    <div id="blog_post_info">
+<div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(2908781,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+        <a id="green_channel_follow" onclick="follow(&#39;c797cb53-8176-e111-aa3f-842b2b196315&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./test1_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./test1_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/taoweiji/" target="_blank"><img src="./test1_files/20160306093010.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/taoweiji/">ImWiki</a><br>
+            <a href="https://home.cnblogs.com/u/taoweiji/followees/">关注 - 17</a><br>
+            <a href="https://home.cnblogs.com/u/taoweiji/followers/">粉丝 - 145</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;c797cb53-8176-e111-aa3f-842b2b196315&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(2908781,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+    <div class="buryit" onclick="votePost(2908781,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+    <div class="clear"></div>
+    <div id="post_next_prev">
+
+    <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/04/2892105.html" class="p_n_p_prefix">« </a> 上一篇：    <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/04/2892105.html" title="发布于 2013-02-04 17:52">软件开发项目文档模版</a>
+    <br>
+    <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/08/2909143.html" class="p_n_p_prefix">» </a> 下一篇：    <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/08/2909143.html" title="发布于 2013-02-08 09:45">Myeclipse 实现java  可视化开发【图】</a>
+
+</div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2013-02-07 15:48</span>&nbsp;
+<a href="https://www.cnblogs.com/taoweiji/">ImWiki</a>&nbsp;
+阅读(<span id="post_view_count">6323</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=2908781" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(2908781);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="./test1_files/highlight.min.js.下载"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 114604, cb_blogApp = 'taoweiji', cb_blogUserGuid = 'c797cb53-8176-e111-aa3f-842b2b196315';
+    var cb_entryId = 2908781, cb_entryCreatedDate = '2013-02-07 15:48', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/taoweiji/archive/2013/02/07/2908781.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/taoweiji/archive/2013/02/07/2908781.html#top">返回顶部</a></div>
+    <div id="comment_form_container"><div class="login_tips">
+    注册用户登录后才能发表评论，请 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a>
+     或 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，
+    <a href="https://www.cnblogs.com/">访问</a> 网站首页。
+</div></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-ucancode&#39;)">【推荐】超50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://click.aliyun.com/m/1000081987/" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-阿里云&#39;)">【推荐】阿里云双11返场来袭，热门产品低至一折等你来抢！</a><br><a href="https://cloud.tencent.com/act/seckill?fromSource=gwzcw.3168381.3168381.3168381&amp;utm_medium=cpc&amp;utm_id=gwzcw.3168381.3168381.3168381" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【推荐】腾讯云热门云产品限时秒杀，爆款1核2G云服务器99元/年！</a><br><a href="https://cloud.baidu.com/campaign/Promotion-20191111/index.html?track=cp:dsp|pf:pc|pp:chui-bokeyuan-huodong-19shuangshiyiganenji-BCC-cpaxingshi-191210|pu:cpa-xingshi|ci:2019syj|kw:2172212" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-百度云&#39;)">【推荐】百度智能云岁末感恩季，明星产品低至1元新老用户畅享</a><br><a href="https://www.jdcloud.com/cn/activity/newUser?utm_source=DMT_cnblogs&amp;utm_medium=CH&amp;utm_campaign=09vm&amp;utm_term=Virtual-Machines" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-京东云&#39;)">【活动】京东云限时优惠1.5折购云主机，最高返价值1000元礼品！</a><br></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="./test1_files/gpt.js.下载"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="COHl4Ie24eYCFYVuYAodi00MUg"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true" src="./test1_files/saved_resource.html"></iframe></div></div>
+    </div>
+    <div id="under_post_news"><div class="recomm-block"><b>相关博文：</b><br>·  <a title="使用ICSharpCode.TextEditor制作一个语法高亮显示的XML编辑器" href="https://www.cnblogs.com/lefay/archive/2010/07/25/1784919.html" target="_blank" onclick="clickRecomItmem(1784919)">使用ICSharpCode.TextEditor制作一个语法高亮显示的XML编辑器</a><br>·  <a title="java 生成 csv文件" href="https://www.cnblogs.com/always-online/p/4801015.html" target="_blank" onclick="clickRecomItmem(4801015)">java 生成 csv文件</a><br>·  <a title="Vue.js 系列教程 2：组件，Props，Slots" href="https://www.cnblogs.com/nzbin/p/6376786.html" target="_blank" onclick="clickRecomItmem(6376786)">Vue.js 系列教程 2：组件，Props，Slots</a><br>·  <a title="Leveldb 使用说明文档" href="https://www.cnblogs.com/oloroso/p/6307206.html" target="_blank" onclick="clickRecomItmem(6307206)">Leveldb 使用说明文档</a><br>·  <a title="&lt;转&gt;RichTextBox的扩展(插入图片到RichTextBox)" href="https://www.cnblogs.com/symbol441/archive/2007/11/01/945857.html" target="_blank" onclick="clickRecomItmem(945857)">&lt;转&gt;RichTextBox的扩展(插入图片到RichTextBox)</a><br>»  <a target="_blank" href="https://recomm.cnblogs.com/blogpost/2908781">更多推荐...</a></div></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="COLl4Ie24eYCFYVuYAodi00MUg">
+            
+        <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true" src="./test1_files/saved_resource(1).html"></iframe></div></div>
+    </div>
+    <div id="under_post_kb">
+<div class="itnews c_ad_block">
+    <b>最新 IT 新闻</b>:
+    <br>
+ ·              <a href="https://news.cnblogs.com/n/652887/" target="_blank">AMD CTO谈Zen4/Zen5：12-18个月升级一代 IPC性能至少提升7%</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/652886/" target="_blank">Chromium Microsoft Edge 浏览器删除了 Beta 标签</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/652885/" target="_blank">2019 年 C++ 的发展</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/652884/" target="_blank">7nm EUV工艺 台积电吃下AMD的Zen3处理器全部订单</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/652883/" target="_blank">美团云注册资本增至8.7亿元，创始人王兴卸任监事</a>
+            <br>
+    » <a href="https://news.cnblogs.com/" title="IT 新闻" target="_blank">更多新闻...</a>
+</div></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem"><!--done-->
+<h3 class="catListTitle">公告</h3>
+
+<div id="blog-news">
+    <div id="weiboIframe" style="float:left; text-align:right"><iframe width="220px" height="75px" class="share_self" frameborder="0" scrolling="no" src="./test1_files/index.html"></iframe></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script type="text/javascript">window['__document_write_ajax_callbacks__']['3']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['1']();</script>
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/taoweiji/">
+            ImWiki
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/taoweiji/" title="入园时间：2012-03-25">
+            7年9个月
+        </a>
+        <br>
+        粉丝：
+        <a href="https://home.cnblogs.com/u/taoweiji/followers/">
+            145
+        </a>
+        <br>
+        关注：
+        <a href="https://home.cnblogs.com/u/taoweiji/followees/">
+            17
+        </a>
+        <div id="p_b_follow">
+<a href="javascript:void(0)" onclick="follow(&#39;c797cb53-8176-e111-aa3f-842b2b196315&#39;)">+加关注</a></div>
+        <script type="text/javascript">window['__document_write_ajax_callbacks__']['4']();</script><script>window['__document_write_ajax_callbacks__']['2']();</script>
+    </div>
+</div>
+
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn">
+<!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    <div id="sidebar_search" class="mySearch">
+        <h3 class="catListTitle">搜索</h3>
+        <div id="sidebar_search_box">
+            <div id="widget_my_zzk" class="div_my_zzk">
+                <input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk">
+            </div>
+            <div id="widget_my_google" class="div_my_zzk">
+                <input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 常用链接 -->
+
+
+<!-- 最新随笔 -->
+<div id="sidebar_recentposts" class="sidebar-block">
+    <div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/11538178.html">1.基于Moya、RxSwift和ObjectMapper优雅实现REST API请求</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/10915534.html">2.基于 Storyboard 多种方式的页面跳转、参数传递</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/10915527.html">3.通过 RxSwift 优雅使用 NotificationCenter</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/9028921.html">4.解决matplotlib库在PyCharm和命令行都无法正常显示问题</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/7323574.html">5.Android融合推送MixPush SDK集成多家推送平台，共享系统级推送，杀死APP也能收到推送</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/5760537.html">6.利用Android Studio、MAT对Android进行内存泄漏检测</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/5748039.html">7.基于apt实现的Android快速持久化框架：AptPreferences</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/5729340.html">8.C/C++在Java项目、Android和Objective-C三大平台下实现混合编程</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/5246540.html">9.Android高性能ORM数据库DBFlow入门</a>
+
+                </li>
+                <li>
+                    
+
+<a href="https://www.cnblogs.com/taoweiji/p/5188514.html">10.通过生产者消费者模式例子讲解Java基类方法wait、notify、notifyAll</a>
+
+                </li>
+			
+
+</ul>
+</div>
+
+
+</div>
+
+
+<!-- 我的标签 -->
+
+
+<!-- 积分与排名 -->
+<div id="sidebar_scorerank" class="sidebar-block">
+    <div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	
+266070
+	</li>
+	<li class="liRank">
+		排名 -	
+1413
+	</li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+    
+        <div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+            <h3 class="catListTitle">
+                
+
+随笔分类
+<span style="font-size:11px;font-weight:normal">(82)</span>
+
+
+            </h3>
+
+
+            <ul>
+
+                        <li>
+                            
+<a href="https://www.cnblogs.com/taoweiji/category/486919.html" rel="" target="">
+    Android(21)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/taoweiji/category/436131.html" rel="" target="">
+    HTML5 &amp; Javascript(10)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/taoweiji/category/1469820.html" rel="" target="">
+    iOS 开发(2)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/taoweiji/category/436787.html" rel="" target="">
+    Java(18)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/taoweiji/category/479330.html" rel="" target="">
+    Java Web(12)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/taoweiji/category/444007.html" rel="" target="">
+    其它(17)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/taoweiji/category/456500.html" rel="" target="">
+    算法与数据结构(2)
+</a>
+ 
+
+                        </li>
+
+            </ul>
+
+
+        </div>
+
+</div>
+
+<!-- 最新评论 -->
+<div id="sidebar_recentcomments" class="sidebar-block">
+    <div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div class="RecentCommentBlock">
+        <ul>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/taoweiji/p/3710262.html#4304853">1. Re:省市区三级联动菜单（附数据库）</a></li>
+                    <li class="recent_comment_body">感谢数据库的提供，Thanks♪(･ω･)ﾉ</li>
+                    <li class="recent_comment_author">--言白</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/taoweiji/p/3710262.html#4284784">2. Re:省市区三级联动菜单（附数据库）</a></li>
+                    <li class="recent_comment_body">天津 香港 台湾 等都么有二级市</li>
+                    <li class="recent_comment_author">--BKY小杰</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/taoweiji/p/3709475.html#4103955">3. Re:MySql按周，按月，按日分组统计数据</a></li>
+                    <li class="recent_comment_body"><b>俄武器</b></li>
+                    <li class="recent_comment_author">--自然对数</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/taoweiji/p/3448008.html#4057198">4. Re:图文介绍如何在Eclipse统计代码行数</a></li>
+                    <li class="recent_comment_body">果然，好办法，我还以为需要安装个啥插件，结果这么简单就搞定了</li>
+                    <li class="recent_comment_author">--下一行code</li>
+                    <li class="recent_comment_title"><a href="http://www.cnblogs.com/taoweiji/archive/2012/12/14/2818787.html#4025468">5. Re:Java 的布局管理器GridBagLayout的使用方法【图文说明】</a></li>
+                    <li class="recent_comment_body">感谢，例子很生动</li>
+                    <li class="recent_comment_author">--北风5620</li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block">
+    <div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/11/2812852.html">
+                            1. Java 通过JDBC连接Mysql数据库的方法和实例【图文说明】(271349)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/11/2812295.html">
+                            2. 在eclipse导入Java 的jar包的方法 JDBC【图文说明】(134537)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/p/3448008.html">
+                            3. 图文介绍如何在Eclipse统计代码行数(104707)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/p/3710262.html">
+                            4. 省市区三级联动菜单（附数据库）(66670)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/14/2818787.html">
+                            5. Java 的布局管理器GridBagLayout的使用方法【图文说明】(61539)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/08/2909214.html">
+                            6. Java Swing 树状组件JTree的使用方法【图】(49245)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/p/3251315.html">
+                            7. jquery ajax 回调函数的值alert出来[object Object] 解决方法(46802)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/04/2892105.html">
+                            8. 软件开发项目文档模版(36062)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2013/01/07/2849853.html">
+                            9. eclipse 快捷键大全，eclipse查找类，文件，添加注释(33186)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/p/4051951.html">
+                            10. Android 代码混淆、第三方平台加固加密、渠道分发 完整教程(图文)(29377)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/10/2812221.html">
+                            11. Java 的swing.GroupLayout布局管理器的使用方法和实例【图文说明】(22386)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/09/2809412.html">
+                            12. HTML5 Web SQL Database 数据库的使用方法【图文说明】(19705)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/14/2818801.html">
+                            13. java网络编程，通过TCP,Socket实现多对一的局域网聊天室(19129)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/17/2914311.html">
+                            14. Java Swing 绝对布局管理方法，null布局【图】(19086)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/p/3496697.html">
+                            15. URI参数签名算法(18550)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+<!-- 评论排行榜 -->
+<div id="sidebar_topcommentedposts" class="sidebar-block">
+    <div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/11/2812852.html">
+                            1. Java 通过JDBC连接Mysql数据库的方法和实例【图文说明】(13)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/p/3710262.html">
+                            2. 省市区三级联动菜单（附数据库）(11)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/14/2818787.html">
+                            3. Java 的布局管理器GridBagLayout的使用方法【图文说明】(8)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/21/2919959.html">
+                            4. Java Swing 非常漂亮的外观Nimbus使用方法(8)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/taoweiji/p/7323574.html">
+                            5. Android融合推送MixPush SDK集成多家推送平台，共享系统级推送，杀死APP也能收到推送(6)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+<!-- 推荐排行榜 -->
+<div id="sidebar_topdiggedposts" class="sidebar-block">
+    
+<div id="topdigg_posts_wrap">
+    <div class="catListView">
+        <h3 class="catListTitle">推荐排行榜</h3>
+        <div id="TopDiggPostsBlock">
+            <ul style="word-break: break-all">
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/11/2812852.html">
+                                1. Java 通过JDBC连接Mysql数据库的方法和实例【图文说明】(17)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/14/2818787.html">
+                                2. Java 的布局管理器GridBagLayout的使用方法【图文说明】(12)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/14/2818801.html">
+                                3. java网络编程，通过TCP,Socket实现多对一的局域网聊天室(11)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/p/3448008.html">
+                                4. 图文介绍如何在Eclipse统计代码行数(10)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/p/5246540.html">
+                                5. Android高性能ORM数据库DBFlow入门(8)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/11/2812295.html">
+                                6. 在eclipse导入Java 的jar包的方法 JDBC【图文说明】(7)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/04/2892105.html">
+                                7. 软件开发项目文档模版(7)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/p/3710262.html">
+                                8. 省市区三级联动菜单（附数据库）(6)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2012/12/10/2812221.html">
+                                9. Java 的swing.GroupLayout布局管理器的使用方法和实例【图文说明】(4)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/08/2909214.html">
+                                10. Java Swing 树状组件JTree的使用方法【图】(3)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/p/3259783.html">
+                                11. Struts2 标签库详解(3)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/archive/2013/02/21/2919959.html">
+                                12. Java Swing 非常漂亮的外观Nimbus使用方法(2)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/p/3260883.html">
+                                13. 编写javascript、Jquery的String.format();(2)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/p/3700915.html">
+                                14. ant+svn+tomcat实现自动构建(2)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/taoweiji/p/3870108.html">
+                                15. WIN7、WIN8 右键在目录当前打开命令行Cmd窗口(图文)(2)
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright © 2020 ImWiki
+<br><span id="poweredby">Powered by .NET Core 3.1.0 on Linux</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F870f258502b81a0178540a8134cb9f8b' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./test1_files/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=870f258502b81a0178540a8134cb9f8b" target="_blank"><img border="0" src="./test1_files/31.gif" width="67" height="18"></a>
+    </div>
+
+<script type="text/javascript">
+var ifr ='<ifra';
+ifr +='me width="220px" height="75px" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1518890071&verifier=12a3bb11&colors=FFFFFF,F5F5F5,666666,0082cb,ecfbfd&dpc=1"></ifr';
+ifr +='ame>';
+document.getElementById('weiboIframe').innerHTML = ifr;
+</script><script type="text/javascript">getFollowStatus('c797cb53-8176-e111-aa3f-842b2b196315');</script></body></html>
